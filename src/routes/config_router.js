@@ -3,7 +3,11 @@ import { BrowserRouter, Routes, Route, useRoutes } from "react-router-dom";
 // import Header from '../components/Header';
 import ErrorPage from '../pages/ErrorPage';
 import HomePage from '../pages/HomePage';
-// import ManagementPage from '../pages/ManagementPage';
+import ManagementPage from '../pages/ManagementPage';
+import ManageMovie from '../components/ManageMovie';
+import ManageUser from '../components/ManageUser';
+import DetailPage from '../pages/DetailPage';
+
 // import DetailPage from '../pages/DetailPage';
 // import TheaterPage from '../pages/TheaterPage';
 // import ListSeats from '../components/ListSeats';
@@ -15,10 +19,34 @@ function useRouteCustom() {
         path:"/",
         element:<HomePage/>,
       },
-    //   {
-    //     path:"/detail/:tenPhim",
-    //     element:<DetailPage/>
-    //   },
+      {
+        path:"/management",
+        element:<ManagementPage/>,
+        children:[
+                {
+                  path:"user",
+                  element:<ManageMovie/>
+                },
+                {
+                  path:"movie",
+                  element:<ManageUser/>
+                },
+                {
+                  path:"*",
+                  element:<ManageUser/>
+                }
+            ]
+
+      },
+      {
+        path:"/detail/:tenPhim",
+        element:<DetailPage/>
+      },
+      // {
+      //   path:"/film",
+      //   element:<ErrorPage/>
+      // },
+   
     //   {
     //     path:"/theater",
     //     element:<TheaterPage/>,
