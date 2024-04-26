@@ -13,7 +13,7 @@ function HomePage() {
 
 
   return (
-    <div className=' dark:bg-slate-500 flex flex-col justify-center items-center'>
+    <div className=' dark:bg-slate-500 flex flex-col justify-center items-center gap-1'>
       <Header></Header>
 
 

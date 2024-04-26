@@ -91,7 +91,7 @@ function ListSeat() {
                
              <div className='flex flex-col lg:flex-row  justify-center items-start px-4'>
 
-                        <div className='w-full lg:w-1/5'>
+                        {/* <div className='w-full lg:w-1/5'>
 
                                 <div className='flex flex-col  mt-20  bg-sky-300'>
                                   <div className='w-full'>
@@ -109,7 +109,7 @@ function ListSeat() {
 
 
                             
-                        </div>
+                        </div> */}
 
 
                         <div className='w-full  lg:w-3/5'>
@@ -156,10 +156,25 @@ function ListSeat() {
 
 
 
-                        <div className='w-full  lg:w-1/5'>
+                        <div className='w-full  lg:w-2/5'>
+
+
+                          <div className='flex flex-col  mt-20  bg-sky-300'>
+                                  <div className='w-full'>
+                                    <img className='w-full max-h-[350px] object-cover' src={thongTinPhim?.hinhAnh} alt="" />
+                                  </div>
+
+                                  <div className='p-3'>
+                                    <div><span className='font-bold'>Tên Phim:</span><span className='text-sky-700 text-xl font-bold'>{thongTinPhim?.tenPhim}</span></div>
+                                    <div><span className='font-bold'>Thời gian:</span><span className='text-red-600 font-bold'>{thongTinPhim?.gioChieu}-{thongTinPhim?.ngayChieu}</span></div>
+                                    <div><span className='font-bold'>Địa Điểm:</span><span className='text-indigo-700 font-bold'>{thongTinPhim?.tenRap}-{thongTinPhim?.diaChi}</span></div>
+                                  </div>
+
+                                   
+                                </div>
 
                                  
-                                    <div className='w-full flex flex-col items-center justify-center mt-20 pb-4  bg-orange-300'>
+                                    <div className='w-full flex flex-col items-center justify-center pb-4  bg-orange-300'>
                                                 <table className="border border-collapse  border-orange-700 w-full">
                                                     <thead>
                                                         <tr>
@@ -198,6 +213,10 @@ function ListSeat() {
 
                                                 <div onClick={handleBookTiket} className='bg-red-600 shadow-md shadow-slate-600 p-2 mt-2 rounded-md hover:text-white hover:bg-red-500 cursor-pointer' > ĐẶT VÉ NGAY</div>
                                             </div>
+
+
+
+
                        
                             
                        </div>
