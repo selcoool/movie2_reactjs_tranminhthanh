@@ -7,6 +7,7 @@ import ManagementPage from '../pages/ManagementPage';
 import ManageMovie from '../components/ManageMovie';
 import ManageUser from '../components/ManageUser';
 import DetailPage from '../pages/DetailPage';
+import TheatrePage from '../pages/TheatrePage';
 
 // import DetailPage from '../pages/DetailPage';
 // import TheaterPage from '../pages/TheaterPage';
@@ -41,6 +42,10 @@ function useRouteCustom() {
       {
         path:"/detail/:tenPhim",
         element:<DetailPage/>
+      },
+      {
+        path:"/theatre",
+        element:<TheatrePage/>
       },
       // {
       //   path:"/film",

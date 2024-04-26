@@ -16,7 +16,7 @@ export const http = axios.create({
         Authorization: `Bearer`+` `+`${token}`
         
     },
-    timeout: 3000
+    timeout: 5000
 });
 
 

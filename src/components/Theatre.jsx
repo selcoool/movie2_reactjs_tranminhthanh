@@ -67,7 +67,7 @@ function Theatre() {
       });
 
     findMoviesInTheatre('BHDStar');
-  }, [brandMovies]);
+  }, []);
 
 
   function handleMoveToTopAfterChoose() {
@@ -78,7 +78,7 @@ function Theatre() {
 
 
   return (
-    <div className='max-w-[1496px] flex justify-center items-center'>
+    <div id="cum_rap" className='max-w-[1496px] flex justify-center items-center'>
 
 <div id='cum_rap' className='dark:bg-slate-500 flex justify-center items-center p-8 '>
     <div className='w-fit h-fit'>
@@ -96,6 +96,7 @@ function Theatre() {
                 onClick={() => {
                   toggleTab(indexBrand);
                   findMoviesInTheatre(brand.maHeThongRap);
+                  setRelatedBrandMovies();
                 }}
               >
              

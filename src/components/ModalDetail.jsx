@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { api_movies } from '../services/apiMovies';
 
-function Modal({ isOpen, setIsOpen,maPhim}) {
+function ModalDetail({ isOpen, setIsOpen,trailerData}) {
     console.log('isOpensssssssssssssssssssss', isOpen);
-    console.log('maPhim', maPhim);
+    console.log('trailerData', trailerData);
     
     const handleCloseModal =(e)=>{
         if(e.target.id==="wrapper")
@@ -33,14 +33,14 @@ function Modal({ isOpen, setIsOpen,maPhim}) {
     return (
         <>
             {isOpen ? (
-                <div id='wrapper' onClick={handleCloseModal} className='absolute top-40 z-10 flex justify-center items-center w-full h-full'>
+                <div id='wrapper' onClick={handleCloseModal} className='absolute top-20 z-10 flex justify-center items-center w-full h-full'>
                  
                    
                       <div className='w-fit h-fit mr-4 bg-slate-100'>
                   
                             <iframe
                         className="lg:w-[750px] lg:h-[400px] w-full h-full"
-                        src={`https://www.youtube.com/embed/EX6clvId19s`}
+                        src={`https://www.youtube.com/embed/${trailerData}`}
                         title="YouTube video player"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -55,4 +55,4 @@ function Modal({ isOpen, setIsOpen,maPhim}) {
 
 // Modal
 //                     <button onClick={() => setIsOpen(false)}>Close Modal</button>
-export default Modal;
+export default ModalDetail;
