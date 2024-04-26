@@ -20,10 +20,12 @@ export const api_movies={
     },
     layThongTinCumRap:(maHeThongRap)=>{
         return http.get(`/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${maHeThongRap}`)
+        // return http.get(`/QuanLyRap/LayThongTinCumRapTheoHeThong`,maHeThongRap)
     },
 
     layThongTinLichChieuHeThongRap:(maHeThongRap)=>{
         return http.get(`/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maHeThongRap}`)
+    
     },
 
     taoLichChieu:(thongTinLichChieu)=>{
@@ -33,6 +35,14 @@ export const api_movies={
           
        
     },
+    layDanhSachPhongVe:(maLichChieu)=>{
+        return http.get(`/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${maLichChieu}`)
+    }
+    ,
+    datVe:(thongTinDatVe)=>{
+        return http.post(`QuanLyDatVe/DatVe`,thongTinDatVe)
+    }
+    
 
     // getAllMoviesPagination:(curentPage,moviePerPage)=>{
     //     return http.get(`/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP04&soTrang=${curentPage}&soPhanTuTrenTrang=${moviePerPage}`)

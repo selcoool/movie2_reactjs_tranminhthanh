@@ -130,6 +130,10 @@ function ManageMovie() {
       onChange={handleChangeSelect}
       options={[
         {
+          value: 'GP00',
+          label: 'GP00',
+        },
+        {
           value: 'GP01',
           label: 'GP01',
         },

@@ -143,11 +143,13 @@ function Theatre() {
                 
                 <div key={indexRelatedBrandMovie} className=' flex flex-col justify-center items-center gap-2 p-4'>
                   
-
-                 
+                  <div className='flex gap-2'>
+                  
+                  <div className='flex flex-col justify-start items-center gap-2 '>     
                   <div><img className='h-40 w-40 object-cover' src={relatedBrandMovie.hinhAnh} alt='' /></div>
-                 
                   <div className='font-bold'>{relatedBrandMovie.tenPhim}</div>
+                  </div>
+                 
                   <div className='flex flex-col gap-2'>
                     {relatedBrandMovie.lstLichChieuTheoPhim.map((lichChieuTheoPhim, indexLichChieuTheoPhim) => (
                       <div key={indexLichChieuTheoPhim} className='flex justify-center gap-1'>
@@ -155,16 +157,20 @@ function Theatre() {
                        
                         <div className='flex flex-col gap-2'>
                         <div className=' border-2  border-orange-800 p-1 px-2 rounded-lg'><span className='text-orange-800 font-bold'>{moment(lichChieuTheoPhim.ngayChieuGioChieu).format('HH:MM:SS')}</span>-<span className='text-sky-900 font-bold'>{moment(lichChieuTheoPhim.ngayChieuGioChieu).format('DD/MM/YYYY')}</span></div>
-                        {/* <Link to={`/theater/book_ticket/${lichChieuTheoPhim.maLichChieu}`} onClick={handleMoveToTopAfterChoose}> */}
+                       
                             <div className='flex justify-center items-center gap-1'>
                             <div className='text-white bg-red-500 p-1 px-2 rounded-lg'>{lichChieuTheoPhim.giaVe.toLocaleString('vi-VN')} VND</div>
+                             <Link to={`/theatre/book_ticket/${lichChieuTheoPhim.maLichChieu}`} onClick={()=>handleMoveToTopAfterChoose()}>
                             <div className='text-white bg-green-500 p-1  px-2 rounded-lg hover:bg-green-700 cursor-pointer'>Đặt Vé</div>
+                             </Link>
                             </div>
                         </div>
-                        {/* </Link> */}
+                       
                  
                       </div>
                     ))}
+                  </div>
+
                   </div>
                  
 

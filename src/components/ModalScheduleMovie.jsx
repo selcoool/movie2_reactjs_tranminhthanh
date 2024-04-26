@@ -232,6 +232,7 @@ function ModalScheduleMovie({ visible, setVisible,data }) {
                             onBlur={handleBlur}
                             value={values.maNhom}
                             onChange={handleOnChangeCustom('maRap')} id='maRap'
+                            placeholder="Chọn mã rạp"
                         >
                             {
                                 state.cumRapChieu?.map((cumRap,index)=>{
@@ -251,7 +252,7 @@ function ModalScheduleMovie({ visible, setVisible,data }) {
 
 
                     <Form.Item label="Giá Vé">
-                        <InputNumber onChange={handleOnChangeCustom('giaVe')} onBlur={handleBlur} id='giaVe' value={values.giaVe} min={25000} max={300000} />
+                        <InputNumber onChange={handleOnChangeCustom('giaVe')} onBlur={handleBlur} id='giaVe' value={values.giaVe} min={75000} max={200000} />
                         {errors.giaVe && touched.giaVe ? (<div className='text-red-500 '>{errors.giaVe}</div>) : ''}
                     </Form.Item>
 

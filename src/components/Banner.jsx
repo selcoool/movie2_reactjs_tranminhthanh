@@ -59,7 +59,7 @@ function Banner() {
         <FaChevronLeft size={30} color="white" onClick={prevSlide} />
       </div>
 
-      <div className=" absolute top-[50%] translate-y-[50%] right-10 cursor-pointer">
+      <div className=" absolute top-[50%] translate-y-[50%] right-5 cursor-pointer">
         <FaChevronRight size={30} color="white" onClick={nextSlide} />
       </div>
 

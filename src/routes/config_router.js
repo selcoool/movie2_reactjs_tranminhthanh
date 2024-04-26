@@ -8,6 +8,7 @@ import ManageMovie from '../components/ManageMovie';
 import ManageUser from '../components/ManageUser';
 import DetailPage from '../pages/DetailPage';
 import TheatrePage from '../pages/TheatrePage';
+import ListSeat from '../components/ListSeat';
 
 // import DetailPage from '../pages/DetailPage';
 // import TheaterPage from '../pages/TheaterPage';
@@ -45,7 +46,13 @@ function useRouteCustom() {
       },
       {
         path:"/theatre",
-        element:<TheatrePage/>
+        element:<TheatrePage/>,
+        children:[
+                {
+                  path:"book_ticket/:maLichChieu",
+                  element:<ListSeat/>
+                }
+            ]
       },
       // {
       //   path:"/film",

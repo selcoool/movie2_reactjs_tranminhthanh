@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Theatre from '../components/Theatre'
 import SliderMovie from '../components/SliderMovie'
+import ListSeat from '../components/ListSeat'
 
 function TheatrePage() {
   return (
@@ -10,6 +11,8 @@ function TheatrePage() {
      <Header></Header>
 
    <SliderMovie></SliderMovie>
+
+   <ListSeat></ListSeat>
 
      <Theatre></Theatre>
 

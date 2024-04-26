@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getAllMovies } from '../redux/movieReducer';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import moment from 'moment';
 import { Rate } from 'antd';
 import ModalDetail from './ModalDetail';
@@ -26,8 +26,8 @@ function DetailMovie() {
     <div className='dark:bg-slate-700  max-w-[1496px] w-full  flex justify-center items-center bg-slate-500'>
       
 
-  <div className='flex max-w-[1496px]  flex-col sm:flex-row w-full lg:min-h-[250px] lg:max-h-[400px]  mt-8 bg-background_detail bg-cover '>
-        <div className='w-full  sm:w-2/4 md:w-1/3 bg-red-400 relative flex justify-center items-center'>
+  <div className='flex max-w-[1496px]  flex-col sm:flex-row w-full  mt-8 bg-background_detail bg-cover '>
+        <div className='w-full  sm:w-2/4 md:w-1/3 bg-red-400 relative flex justify-center items-center  lg:min-h-[250px] lg:max-h-[400px]'>
           <img className='w-full h-full object-cover' src={movies[0]?.hinhAnh}  alt="" />
           <div className='absolute  text-white text-8xl' onClick={()=>setIsOpen(!isOpen)}><FaRegCirclePlay className='hover:scale-105 cursor-pointer'/></div>
           
@@ -39,7 +39,7 @@ function DetailMovie() {
             <div><span className='text-white text-lg'>Ngày Khởi Chiếu:</span><span className='text-orange-400'>  {moment(movies[0]?.ngayKhoiChieu).utcOffset(7 * 60).format('hh:mm:ss - DD/MM/YYYY ')}</span></div>
             <div><span className='text-white  text-lg'>Đánh Giá:</span><span className='text-orange-400'>{console.log('fffffffffffffff',typeof movies[0]?.danhGia)} <Rate defaultValue={(movies[0]?.danhGia)/2 || 1} allowHalf disabled/></span></div>
             <div className='flex gap-2'>
-              <div className='p-4 bg-sky-600 w-fit hover:text-white cursor-pointer'onClick={()=>setIsOpen(!isOpen)}>XEM TRAILER</div><div className='p-4 bg-red-600 w-fit hover:text-white cursor-pointer'>ĐẶT VÉ</div>
+              <div className='p-4 bg-sky-600 w-fit hover:text-white cursor-pointer'onClick={()=>setIsOpen(!isOpen)}>XEM TRAILER</div><Link to={'/theatre'} className='p-4 bg-red-600 w-fit hover:text-white cursor-pointer'>ĐẶT VÉ</Link>
             </div>
 
           </div>
