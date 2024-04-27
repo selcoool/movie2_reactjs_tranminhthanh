@@ -84,14 +84,14 @@ function ListSeat() {
 
    
     return (
-        <div className='max-w-[1496px] w-screen  mx-0 flex justify-center items-center pb-20 bg-lime-500'>
-           
+        <div className='max-w-[1496px] w-screen  mx-0 flex justify-center items-center p-8 bg-lime-500'>
+           dddddddd
             {danhSachGhe.length > 0 ? (
                 
                
              <div className='flex flex-wrap h-fit w-full flex-col lg:flex-row  justify-center items-start px-4'>
 
-                        <div className='w-full  lg:w-3/5'>
+                        <div className='w-full h-fit lg:w-3/5'>
 
                                     <div className='w-full flex flex-col justify-center items-center lg:px-4 '>
 
@@ -108,7 +108,7 @@ function ListSeat() {
 
 
 
-<div className='w-full h-full grid grid-cols-10 gap-1 bg-amber-300'>
+<div className='w-full h-fit grid grid-cols-10 gap-1 bg-amber-300'>
     {danhSachGhe?.map((ghe, indexGhet) => {
         const isGheDaDat = ghe.daDat; // Giả sử 'daDat' là trường thể hiện ghế đã được đặt hay chưa
         const isGheVip = ghe.loaiGhe === 'Vip'; // Giả sử 'loaiGhe' là trường thể hiện loại ghế
