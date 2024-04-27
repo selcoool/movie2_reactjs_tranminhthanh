@@ -78,7 +78,7 @@ function Theatre() {
 
 
   return (
-    <div  className='max-w-[1496px] flex justify-center items-center'>
+    <div  className='max-w-[1496px] flex justify-center items-center bg-purple-400'>
 
 <div  className='dark:bg-slate-500 flex justify-center items-center px-8 pb-´ '>
     <div className='w-fit h-fit'>
