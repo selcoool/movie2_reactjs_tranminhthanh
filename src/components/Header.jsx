@@ -186,15 +186,20 @@ function Header() {
             {JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung==="QuanTri" || JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung==="KhachHang"
              ?(
 
+              <>
+               <div className='text-lg text-slate-50'>{JSON.parse(localStorage.getItem('USER'))?.hoTen}</div>
               <a   onClick={()=>[setOpenMenuSignOut(!openMenuSignOut)]} href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Đăng Xuất</a>
+              </>
              )
 
              : (
               <>
                 <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false),setOpenMenuNavbar(false)]}>Đăng Nhập</a>
             <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false),setOpenMenuNavbar(false)]}>Đăng Ký</a>
-            
-            <Link to={'/management'} className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Quản lý</Link>
+                    {JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung === "QuanTri" && (
+                  <Link to={'/management'} className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Quản lý</Link>
+                     )}
+                    
               
               </>
 
