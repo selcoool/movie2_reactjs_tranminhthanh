@@ -129,7 +129,7 @@ function ListSeat() {
 
 
 
-<div className='w-full h-full grid grid-cols-10 gap-2 mb-96'>
+<div className='w-full h-full grid grid-cols-10 gap-2 mb-20'>
     {danhSachGhe?.map((ghe, indexGhet) => {
         const isGheDaDat = ghe.daDat; // Giả sử 'daDat' là trường thể hiện ghế đã được đặt hay chưa
         const isGheVip = ghe.loaiGhe === 'Vip'; // Giả sử 'loaiGhe' là trường thể hiện loại ghế
