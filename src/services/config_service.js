@@ -7,7 +7,7 @@ if(localStorage.getItem('USER')){
 }
 // console.log('lllllllllllllllllllllllllxxxxxxxxxxxxx',token)
 
-console.log('`Bearer ${token}`',`Bearer ${token}`)
+// console.log('`Bearer ${token}`',`Bearer ${token}`)
 
 export const http = axios.create({
     baseURL: "https://movienew.cybersoft.edu.vn/api",

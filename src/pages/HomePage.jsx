@@ -9,6 +9,7 @@ import Movie from '../components/Movie';
 import Footer from '../components/Footer';
 
 
+
 function HomePage() {
 
 
@@ -21,7 +22,7 @@ function HomePage() {
       <Banner></Banner>
    
       
-      
+     
   
       <Movie></Movie>
 

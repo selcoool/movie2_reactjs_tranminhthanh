@@ -11,15 +11,18 @@ import { MdSunny } from 'react-icons/md';
 import ModalSignUp from './ModalSignUp';
 import ModalSignIn from './ModalSignIn';
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+
 import ModalSignOut from './ModalSignOut';
+import { useLocation } from 'react-router-dom';
+ 
 
 import { ToastContainer, toast } from 'react-toastify';
 
 function Header() {
-
+ 
   const location = useLocation();
   const { pathname } = location;
+ 
 
   // console.log('dasdas',pathname)
 
@@ -112,22 +115,28 @@ function Header() {
     <div className="hidden lg:flex lg:gap-x-12">
       <Link to={`/`}  href="#cum_rap" className={`text-lg font-semibold leading-6 ${pathname==='/' ? 'text-white' :'text-gray-900'}  hover:text-white hover:scale-125`}>Lịch Chiếu</Link>
       <Link to={`/theatre`}  href="#cum_rap" className={`text-lg font-semibold leading-6 ${pathname==='/theatre' ? 'text-white' :'text-gray-900'}  hover:text-white hover:scale-125`}>Cụm Rạp</Link>
-      <a href="#ung_dung" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Ứng Dụng</a>
+      <Link to={`/apps`}  href="#cum_rap" className={`text-lg font-semibold leading-6 ${pathname==='/apps' ? 'text-white' :'text-gray-900'}  hover:text-white hover:scale-125`}>Ứng Dụng</Link>
+      {/* <a href="#ung_dung" className="text-lg font-semibold leading-6 text-gray-900 hover:text-white hover:scale-125">Ứng Dụng</a> */}
     </div>
     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-  {JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung==="QuanTri" || JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung==="QuanTri"
+  {JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung==="QuanTri" || JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung==="KhachHang"
    ? (<>
 
 <div className="flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-110 cursor-pointer"  >{JSON.parse(localStorage.getItem('USER'))?.hoTen}<span aria-hidden="true"></span></div>
    <div className="flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-110 cursor-pointer" onClick={()=>[setOpenMenuSignOut(!openMenuSignOut)]} ><SiGnome/>Đăng Xuất <span aria-hidden="true"></span></div>
-   
-   <Link to={`/management`} className="flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-110 cursor-pointer"><FaDatabase/>Quản lý</Link></>)
+     
+          {JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung === "QuanTri" && (
+            <Link to={`/management`} className="flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-110 cursor-pointer"><FaDatabase/>Quản lý</Link>
+         )}
+  
+   </>)
    :(<>
    
    
    <div className="flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-110 cursor-pointer" onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false)]} ><FaUserNinja/>Đăng Nhập <span aria-hidden="true"></span></div>
      
-   <div className="flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-110 cursor-pointer" onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false)]}><GiArchiveRegister/>Đăng Ký <span aria-hidden="true"></span></div></>)}
+   <div className="flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-110 cursor-pointer" onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false)]}><GiArchiveRegister/>Đăng Ký <span aria-hidden="true"></span></div>
+   </>)}
 
 
       
@@ -167,16 +176,32 @@ function Header() {
           <div className="space-y-2 py-6">
           <Link to={`/`} className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${pathname==='/' ? 'text-white' :'text-gray-900'}  hover:bg-gray-50`}>Lịch Chiếu</Link>
           <Link to={`/theatre`} className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${pathname==='/theatre' ? 'text-white' :'text-gray-900'}  hover:bg-gray-50`}>Cụm Rạp</Link>
+          <Link to={`/apps`} className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${pathname==='/apps' ? 'text-white' :'text-gray-900'}  hover:bg-gray-50`}>Ứng Dụng</Link>
             {/* <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Lịch Chiếu</a> */}
             {/* <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Cụm Rạp</a>
             <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Tin Tức</a> */}
-            <a href="#ung_dung" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={()=>setOpenMenuNavbar(false)}>Ứng Dụng</a>
+            {/* <a href="#ung_dung" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={()=>setOpenMenuNavbar(false)}>Ứng Dụng</a> */}
           </div>
           <div className="py-6">
-            <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false),setOpenMenuNavbar(false)]}>Đăng Nhập</a>
+            {JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung==="QuanTri" || JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung==="KhachHang"
+             ?(
+
+              <a   onClick={()=>[setOpenMenuSignOut(!openMenuSignOut)]} href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Đăng Xuất</a>
+             )
+
+             : (
+              <>
+                <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={()=>[setOpenMenuSignIn(!openMenuSignIn),setOpenMenuSignUp(false),setOpenMenuNavbar(false)]}>Đăng Nhập</a>
             <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={()=>[setOpenMenuSignUp(!openMenuSignUp),setOpenMenuSignIn(false),setOpenMenuNavbar(false)]}>Đăng Ký</a>
-            <a href="#" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Đăng Xuất</a>
+            
             <Link to={'/management'} className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Quản lý</Link>
+              
+              </>
+
+
+             )
+            }
+          
           </div>
         </div>
       </div>

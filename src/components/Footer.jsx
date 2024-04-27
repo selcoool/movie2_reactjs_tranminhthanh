@@ -53,9 +53,13 @@ function Footer() {
     </div>
   </div>
   <div className='w-full sm:w-1/4 md:w-1/3 '>
-    <div className='flex flex-col items-center gap-3'>
+    <div className='flex flex-col  items-center gap-3'>
       <h1 className='text-lg lg:text-2xl text-white font-bold py-3'>Ứng Dụng</h1>
-      <div className='flex'><DiAndroid className='text-7xl text-lime-400 hover:scale-125 cursor-pointer'/><FaAppStoreIos className='text-7xl text-sky-600 hover:scale-125 cursor-pointer'/></div>
+      <div className='flex'><DiAndroid className='text-7xl text-lime-400 hover:scale-125 cursor-pointer'/>
+      <FaAppStoreIos className='text-7xl text-sky-600 hover:scale-125 cursor-pointer'/>
+      <MdComputer className='text-7xl text-lime-500 hover:scale-125 cursor-pointer'/>
+      
+      </div>
     </div>
   </div>
 </div>

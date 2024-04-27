@@ -9,6 +9,7 @@ import ManageUser from '../components/ManageUser';
 import DetailPage from '../pages/DetailPage';
 import TheatrePage from '../pages/TheatrePage';
 import ListSeat from '../components/ListSeat';
+import AppPage from '../pages/AppPage';
 
 // import DetailPage from '../pages/DetailPage';
 // import TheaterPage from '../pages/TheaterPage';
@@ -53,6 +54,10 @@ function useRouteCustom() {
                   element:<ListSeat/>
                 }
             ]
+      },
+      {
+        path:"/apps",
+        element:<AppPage/>,
       },
       // {
       //   path:"/film",

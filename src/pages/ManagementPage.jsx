@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Avatar, Image, Menu } from 'antd';
 import { FaUserTie } from "react-icons/fa";
@@ -8,6 +8,7 @@ import { IoIosHome } from "react-icons/io";
 import ManageMovie from '../components/ManageMovie';
 import ManageUser from '../components/ManageUser';
 import { ToastContainer, toast } from 'react-toastify';
+import ModalSignOut from '../components/ModalSignOut';
 
 
 // import { useHistory } from 'react-router-dom';
@@ -17,6 +18,23 @@ function ManagementPage() {
   const nav=useNavigate();
   const [activeTab, setActiveTab] = useState('/management/user');
   console.log('pppppp',activeTab)
+
+
+  const [openMenuSignOut,setOpenMenuSignOut]=useState(false)
+
+  useEffect(()=>{
+    if(localStorage.getItem('USER')){
+          if(JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung === "QuanTri"){
+            console.log('Dang nhap qtr')
+          }else{
+            nav('/')
+          }
+    }else{
+      nav('/')
+    }
+   
+   }) 
+
 
   return (
     <div className='w-full h-full'>
@@ -29,10 +47,13 @@ function ManagementPage() {
       
        </div>
        <div className='text-white font-bold'>
-      Tran Minh Thanh
+
+        {JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung==="QuanTri" ? (JSON.parse(localStorage.getItem('USER'))?.hoTen) : ('ssdsd')}
        </div>
        <div className='flex gap-2 text-[12px] text-zinc-50'>
-        <div className='cursor-pointer'>Đăng xuất</div><div className='cursor-pointer'>Đăng nhập</div>
+        <div onClick={()=>setOpenMenuSignOut(!openMenuSignOut)} className='cursor-pointer'>Đăng xuất</div>
+        
+        {/* <div className='cursor-pointer'>Đăng nhập</div> */}
        </div>
      
        </div>
@@ -86,6 +107,7 @@ function ManagementPage() {
       </div>
 
       <ToastContainer/>
+      <ModalSignOut  isOpen={openMenuSignOut} setIsOpen={setOpenMenuSignOut} />
     </div>
   );
 }

@@ -76,6 +76,7 @@
 .ant-tabs-tab-btn{
     color: white;
     font-weight: bold;
+   
 }
 
 .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
@@ -102,16 +103,35 @@
     flex-direction: 5px;
 }
 
+.ant-tabs >div>.ant-tabs-nav .ant-tabs-nav-list {
+    position: relative;
+    display: flex;
+    transition: opacity 0.3s;
+    width: fit-content !important;
+}
+
+
+
 
 @media only screen and (max-width: 532px) {
+ 
     .ant-tabs-nav-list{
 
-        padding-left:80px;
+        /* padding-left:80px; */
         margin-right: 0;
       
         
     }
+    .ant-tabs-nav-list {
+        margin-left: -1px;
+        grid-area: 0px;
+        width: 375px;
+    }
  }
+
+
+ 
+  
 
 
 

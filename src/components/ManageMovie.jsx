@@ -42,7 +42,7 @@ function ManageMovie() {
     //  console.log('yyyyyyyyyyyyygroup',group)
     //  console.log('yyyyyyyyyyyyymoviesData',moviesData)
 
-
+   
     
 
     const onSearchMovie = (value) => {

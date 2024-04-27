@@ -4,10 +4,23 @@ import * as yup from "yup"
 import { signInUser } from '../redux/userReducer';
 import { useDispatch } from 'react-redux';
 // import { api_movies } from '../services/api_movies';
+// import { useLocation } from 'react-router-dom';
+ 
+
+
 
 function ModalSignIn({ isOpen, setIsOpen}) {
     console.log('isOpen', isOpen);
     // console.log('maPhim', maPhim);
+
+
+  //   const location = useLocation();
+  // const { pathname } = location;
+  
+
+  // console.log('pathname', pathname);
+
+
     const dispatch=useDispatch();
 
     const handleCloseModal = (e) => {
