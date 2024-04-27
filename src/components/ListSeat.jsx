@@ -89,7 +89,7 @@ function ListSeat() {
             {danhSachGhe.length > 0 ? (
                 
                
-             <div className='flex flex-col lg:flex-row  justify-center items-start px-4'>
+             <div className='flex flex-wrap h-fit flex-col lg:flex-row  justify-center items-start px-4'>
 
                         {/* <div className='w-full lg:w-1/5'>
 
@@ -137,7 +137,7 @@ function ListSeat() {
             <div
                 key={ghe.maGhe}
                 onClick={() => !isGheDaDat && setBookTickets([...bookTickets, ghe])}
-                className={`border shadow-zinc-500 shadow-md rounded-full bg-${isGheDaDat ? 'gray' : isGheVip ? 'red' : 'orange'}-500 border-gray-300 flex justify-center items-center py-2 px-3 text-center hover:scale-105 hover:bg-${isGheDaDat ? 'gray' : isGheVip ? 'red' : 'orange'}-400/90 cursor-${isGheDaDat ? 'not-allowed' : 'pointer'}`}
+                className={`border shadow-zinc-500 shadow-md rounded-full ${isGheDaDat ? 'bg-gray' : isGheVip ? 'bg-red' : 'bg-orange'}-500 border-gray-300 flex justify-center items-center py-2 px-3 text-center hover:scale-105 hover:${isGheDaDat ? 'bg-gray' : isGheVip ? 'bg-red' : 'bg-orange'}-400/90 cursor-${isGheDaDat ? 'not-allowed' : 'pointer'}`}
             >
                 {isGheDaDat ? "Đặt" : `${ghe.tenGhe}`}
             </div>
