@@ -78,9 +78,9 @@ function Theatre() {
 
 
   return (
-    <div  className='max-w-[1496px] flex justify-center items-center bg-purple-400'>
+    <div  className='max-w-[1496px] flex justify-center items-center'>
 
-<div  className='dark:bg-slate-500 flex justify-center items-center px-8 pb-´ '>
+<div  className='dark:bg-slate-500 flex justify-center items-center p-8 '>
     <div className='w-fit h-fit'>
       {/* <div className='w-full h-full  flex flex-wrap flex-col justify-center items-center bg-slate-500'> */}
       <h1 className='text-center text-2xl font-bold text-cyan-500 py-3'>RẠP PHIM VÀ PHIM</h1>
