@@ -10,11 +10,11 @@ function TheatrePage() {
     <div className=' dark:bg-slate-500 flex flex-col justify-center items-center'>
      <Header></Header>
 
-
+     <SliderMovie></SliderMovie>
 
    <ListSeat></ListSeat>
 
-   <SliderMovie></SliderMovie>
+   
 
      <Theatre></Theatre>
 
