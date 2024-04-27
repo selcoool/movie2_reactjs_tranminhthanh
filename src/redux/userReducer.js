@@ -188,7 +188,7 @@ export const userSlice = createSlice({
     });
     builder.addCase(deleteAUser.rejected, (state, action) => {
       state.status = 'rejected';
-      toast.error('Bạn xóa không thành công !')
+      toast.error('Bạn xóa không thành công, có thể người dùng đã đặt vé nên không thể xóa !')
     });
 
 
@@ -206,7 +206,7 @@ export const userSlice = createSlice({
     });
     builder.addCase(editAUser.rejected, (state, action) => {
       state.status = 'rejected';
-      toast.error('Bạn chỉnh không thành công !')
+      toast.error('Bạn chỉnh không thành công, không thể chỉnh sửa tài khoản, và email !')
     });
 
 

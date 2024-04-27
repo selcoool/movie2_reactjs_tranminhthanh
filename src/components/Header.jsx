@@ -122,7 +122,7 @@ function Header() {
   {JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung==="QuanTri" || JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung==="KhachHang"
    ? (<>
 
-<div className="flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-110 cursor-pointer"  >{JSON.parse(localStorage.getItem('USER'))?.hoTen}<span aria-hidden="true"></span></div>
+<div className="flex items-center gap-2 text-sm font-semibold leading-6 transition-all duration-100 text-white hover:text-white hover:scale-110 cursor-pointer"  >{JSON.parse(localStorage.getItem('USER'))?.hoTen}<span aria-hidden="true"></span></div>
    <div className="flex items-center gap-2 text-sm font-semibold leading-6 text-gray-900 transition-all duration-100 hover:text-white hover:scale-110 cursor-pointer" onClick={()=>[setOpenMenuSignOut(!openMenuSignOut)]} ><SiGnome/>Đăng Xuất <span aria-hidden="true"></span></div>
      
           {JSON.parse(localStorage.getItem('USER'))?.maLoaiNguoiDung === "QuanTri" && (
