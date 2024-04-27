@@ -39,7 +39,7 @@ function SliderMovie() {
       
           
       <div className='relative flex items-center mt-8'>
-    {movies.length>=1 && ( <BsArrowLeftCircle className=' z-[1] left-4 absolute text-white' onClick={slideLeft} size={30}/>)}
+    {movies.length>=1 && ( <BsArrowLeftCircle className=' z-[1] left-4 absolute text-white cursor-pointer' onClick={slideLeft} size={30}/>)}
 <div id='slider' className='w-full h-full overflow-x-scroll scroll scroll-smooth whitespace-nowrap no-scrollbar  '>
  
 
@@ -90,7 +90,7 @@ function SliderMovie() {
   
 
 </div> 
-{movies.length>=1 && (<BsArrowRightCircle className=' z-[1] right-4 absolute text-white' onClick={sliderRight} size={30}/>)}
+{movies.length>=1 && (<BsArrowRightCircle className=' z-[1] right-4 absolute text-white cursor-pointer' onClick={sliderRight} size={30}/>)}
 </div>
 
 
