@@ -89,7 +89,7 @@ function ListSeat() {
             {danhSachGhe.length > 0 ? (
                 
                
-             <div className='flex flex-wrap h-fit flex-col lg:flex-row  justify-center items-start px-4'>
+             <div className='flex flex-wrap h-fit w-full flex-col lg:flex-row  justify-center items-start px-4'>
 
                         {/* <div className='w-full lg:w-1/5'>
 
