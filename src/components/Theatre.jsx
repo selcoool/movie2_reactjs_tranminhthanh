@@ -80,7 +80,7 @@ function Theatre() {
   return (
     <div  className='max-w-[1496px] flex justify-center items-center'>
 
-<div  className='dark:bg-slate-500 flex justify-center items-center p-8 '>
+<div  className='dark:bg-slate-500 flex justify-center items-center px-8 pb-´ '>
     <div className='w-fit h-fit'>
       {/* <div className='w-full h-full  flex flex-wrap flex-col justify-center items-center bg-slate-500'> */}
       <h1 className='text-center text-2xl font-bold text-cyan-500 py-3'>RẠP PHIM VÀ PHIM</h1>
@@ -135,7 +135,7 @@ function Theatre() {
             </div>
           </div>
           <div className='bg-orange-100 panels w-full flex flex-col   max-w-[500px] max-h-[300px] lg:max-h-[500px] overflow-y-auto no-scrollbar'>
-          <h1 className='text-center font-bold text-red-500  text-xl pt-2'>Danh sách phim và thời gian chiếu:</h1>
+          <h1 className='text-center font-bold text-red-500  text-xl'>Danh sách phim và thời gian chiếu:</h1>
             {relatedBrandMovies?.length >= 1 ? (
               
               relatedBrandMovies.map((relatedBrandMovie, indexRelatedBrandMovie) => (

@@ -84,33 +84,12 @@ function ListSeat() {
 
    
     return (
-        <div className='max-w-[1496px] w-screen  mx-0 flex justify-center items-center'>
+        <div className='max-w-[1496px] w-screen  mx-0 flex justify-center items-center pb-20'>
            
             {danhSachGhe.length > 0 ? (
                 
                
              <div className='flex flex-wrap h-fit w-full flex-col lg:flex-row  justify-center items-start px-4'>
-
-                        {/* <div className='w-full lg:w-1/5'>
-
-                                <div className='flex flex-col  mt-20  bg-sky-300'>
-                                  <div className='w-full'>
-                                    <img className='w-full' src={thongTinPhim?.hinhAnh} alt="" />
-                                  </div>
-
-                                  <div className='p-3'>
-                                    <div><span className='font-bold'>Tên Phim:</span><span className='text-sky-700 text-xl font-bold'>{thongTinPhim?.tenPhim}</span></div>
-                                    <div><span className='font-bold'>Thời gian:</span><span className='text-red-600 font-bold'>{thongTinPhim?.gioChieu}-{thongTinPhim?.ngayChieu}</span></div>
-                                    <div><span className='font-bold'>Địa Điểm:</span><span className='text-indigo-700 font-bold'>{thongTinPhim?.tenRap}-{thongTinPhim?.diaChi}</span></div>
-                                  </div>
-
-                                   
-                                </div>
-
-
-                            
-                        </div> */}
-
 
                         <div className='w-full  lg:w-3/5'>
 
@@ -129,7 +108,7 @@ function ListSeat() {
 
 
 
-<div className='w-full h-full grid grid-cols-10 gap-2 mb-20'>
+<div className='w-full h-full grid grid-cols-10 gap-2'>
     {danhSachGhe?.map((ghe, indexGhet) => {
         const isGheDaDat = ghe.daDat; // Giả sử 'daDat' là trường thể hiện ghế đã được đặt hay chưa
         const isGheVip = ghe.loaiGhe === 'Vip'; // Giả sử 'loaiGhe' là trường thể hiện loại ghế
